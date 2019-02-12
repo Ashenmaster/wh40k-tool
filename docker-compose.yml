@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  vp-counter:
+    container_name: vp-counter
+    image: vp-counter:latest
+    build:
+      context: ./vp-counter
+    ports:
+      - "3000:3000"
+  db:
+    container_name: DB
+    image: mongo:latest
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
