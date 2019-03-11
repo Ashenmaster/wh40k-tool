@@ -3,7 +3,7 @@ const expect = require('expect');
 
 const app = require('../index');
 
-describe('POST /', () => {
+describe('POST / increment', () => {
 	it('should return a 200 when called with options', (done) => {
 		request(app)
 			.post('/')
