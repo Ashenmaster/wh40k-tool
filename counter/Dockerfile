@@ -1,4 +1,4 @@
-FROM node:8-jessie
+FROM node:8-alpine
 
 WORKDIR /usr/src/app
 
@@ -9,5 +9,5 @@ RUN npm install
 COPY . .
 
 EXPOSE 3000
+CMD ["npm", "start"]
 
-CMD [ "npm", "start" ]
