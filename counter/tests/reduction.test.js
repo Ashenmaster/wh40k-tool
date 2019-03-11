@@ -7,7 +7,7 @@ describe('POST /', () => {
 	it('should return a 200 when called with options', (done) => {
 		request(app)
 			.post('/')
-			.send({originalValue: 1, modifier: 1})
+			.send({originalValue: 1, modifier: -1})
 			.expect(200)
 			.end((err, res) => {
 				if (err) return done(err);
@@ -55,8 +55,8 @@ describe('POST /', () => {
 
 	it('should return sum of the originalValue and increment', (done) => {
 		let originalValue = 1;
-		let modifier = 1;
-		let expectedValue = 2;
+		let modifier = -1;
+		let expectedValue = 0;
 		request(app)
 			.post('/')
 			.send({originalValue, modifier})
