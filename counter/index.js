@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const status = require('./status');
+
 let app = express();
 
 app.use(morgan('combined', {
@@ -22,6 +24,10 @@ function reduction(originalValue, modifier) {
 	let newModifier = Math.abs(modifier);
 	return originalValue - newModifier;
 }
+
+app.get('/status', (req, res) => {
+	res.json(status);
+});
 
 app.post('/', (req, res) => {
 	let originalValue = req.body.originalValue;
