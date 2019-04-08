@@ -1,5 +1,7 @@
 FROM node:lts-alpine
 
+ENV ENVIRONMENT="prod"
+
 WORKDIR /usr/src/app
 
 COPY ./package.json ./package-lock.json ./
